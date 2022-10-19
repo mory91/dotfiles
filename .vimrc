@@ -1,11 +1,4 @@
 " --- General Settings ---
-set encoding=UTF-8
-set backspace=indent,eol,start
-set ruler
-set number
-set showcmd
-set incsearch
-set hlsearch
 
 syntax on
 
@@ -19,34 +12,55 @@ call plug#begin()
 
 Plug 'fatih/vim-go', { 'tag': '*' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'altercation/vim-colors-solarized'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'preservim/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'
-Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/syntastic'
 Plug 'dense-analysis/ale'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'ryanoasis/vim-devicons'
+Plug 'preservim/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
 
 call plug#end()
 
+set encoding=UTF-8
+set backspace=indent,eol,start
+set hlsearch
+set ruler
 set background=dark
-colorscheme solarized
+set number
+set showcmd
+set incsearch
 set laststatus=2
+set termwinsize=10x0
 
 let g:airline_detect_paste=1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
+let g:solarized_termcolors=256
 
+let NERDTreeShowHidden=1
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
-autocmd VimEnter * NERDTree
 
 " Use ctrl-[hjkl] to select the active split!
 nmap <silent> <c-k> :wincmd k<CR>
 nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
+
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+
+" vim-powered terminal in split window
+map <Leader>t :bo term ++close<cr>
+tmap <Leader>t <c-w>:bo term ++close<cr>
+" vim-powered terminal in new tab
+map <Leader>T :tab term ++close<cr>
+tmap <Leader>T <c-w>:tab term ++close<cr>
+
+colorscheme solarized
