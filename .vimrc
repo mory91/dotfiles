@@ -23,6 +23,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
