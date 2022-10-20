@@ -34,7 +34,6 @@ set number
 set showcmd
 set incsearch
 set laststatus=2
-set termwinsize=10x0
 
 let g:airline_detect_paste=1
 let g:airline#extensions#tabline#enabled = 1
@@ -57,8 +56,8 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 
 " vim-powered terminal in split window
-map <Leader>t :bo term ++close<cr>
-tmap <Leader>t <c-w>:bo term ++close<cr>
+map <Leader>t :bo term ++rows=10 ++close<cr>
+tmap <Leader>t <c-w>:bo term ++rows=10 ++close<cr>
 " vim-powered terminal in new tab
 map <Leader>T :tab term ++close<cr>
 tmap <Leader>T <c-w>:tab term ++close<cr>
