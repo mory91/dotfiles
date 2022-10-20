@@ -11,7 +11,8 @@ endif
 call plug#begin()
 
 Plug 'fatih/vim-go', { 'tag': '*' }
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -61,5 +62,8 @@ tmap <Leader>t <c-w>:bo term ++rows=10 ++close<cr>
 " vim-powered terminal in new tab
 map <Leader>T :tab term ++close<cr>
 tmap <Leader>T <c-w>:tab term ++close<cr>
+
+nnoremap <silent> <Leader>f :Files<CR>
+nnoremap <silent> <Leader>r :Ag<CR>
 
 colorscheme solarized
