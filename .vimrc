@@ -24,6 +24,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'preservim/tagbar'
 
 call plug#end()
 
@@ -63,8 +64,10 @@ tmap <Leader>t <c-w>:bo term ++rows=10 ++close<cr>
 " vim-powered terminal in new tab
 map <Leader>T :tab term ++close<cr>
 tmap <Leader>T <c-w>:tab term ++close<cr>
-
+" fzf
 nnoremap <silent> <Leader>f :Files<CR>
 nnoremap <silent> <Leader>r :Ag<CR>
+" tagbar
+nmap <F8> :TagbarToggle<CR>
 
 colorscheme solarized
