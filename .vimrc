@@ -10,7 +10,6 @@ endif
 
 call plug#begin()
 
-Plug 'fatih/vim-go', { 'tag': '*' }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'jiangmiao/auto-pairs'
@@ -18,11 +17,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/syntastic'
 Plug 'dense-analysis/ale'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'preservim/tagbar'
 
@@ -30,13 +27,18 @@ call plug#end()
 
 set encoding=UTF-8
 set backspace=indent,eol,start
-set hlsearch
 set ruler
 set background=dark
+set relativenumber
 set number
 set showcmd
 set incsearch
+set ignorecase
+set smartcase
+set hlsearch
 set laststatus=2
+
+nnoremap <silent><expr> <Leader>h (&hls && v:hlsearch ? ':nohls' : ':set hls')."\n"
 
 let g:airline_detect_paste=1
 let g:airline#extensions#tabline#enabled = 1
