@@ -22,6 +22,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/nerdtree'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'preservim/tagbar'
+Plug 'sheerun/vim-polyglot'
+Plug 'davidhalter/jedi-vim'
 
 call plug#end()
 
@@ -60,6 +62,11 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 
+let g:ale_linters = {'python': ['flake8', 'pylint']}
+let g:ale_fixers = {'python': ['yapf']}
+nmap <F10> :ALEFix<CR>
+let g:ale_fix_on_save = 1
+
 " vim-powered terminal in split window
 map <Leader>t :bo term ++rows=10 ++close<cr>
 tmap <Leader>t <c-w>:bo term ++rows=10 ++close<cr>
@@ -71,5 +78,7 @@ nnoremap <silent> <Leader>f :Files<CR>
 nnoremap <silent> <Leader>r :Ag<CR>
 " tagbar
 nmap <F8> :TagbarToggle<CR>
+
+let g:jedi#popup_on_dot = 0
 
 colorscheme solarized
