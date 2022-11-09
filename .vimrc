@@ -75,7 +75,7 @@ map <Leader>T :tab term ++close<cr>
 tmap <Leader>T <c-w>:tab term ++close<cr>
 " fzf
 nnoremap <silent> <Leader>f :Files<CR>
-nnoremap <silent> <Leader>r :Ag<CR>
+nnoremap <silent> <Leader>R :Ag<CR>
 " tagbar
 nmap <F8> :TagbarToggle<CR>
 
