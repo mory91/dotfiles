@@ -24,6 +24,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'preservim/tagbar'
 Plug 'sheerun/vim-polyglot'
 Plug 'davidhalter/jedi-vim'
+Plug 'makerj/vim-pdf'
 
 call plug#end()
 
