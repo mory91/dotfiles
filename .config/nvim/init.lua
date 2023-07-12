@@ -63,6 +63,12 @@ require('packer').startup(function(use)
   use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
   use 'christoomey/vim-tmux-navigator'
 
+  -- LaTeX
+  use 'lervag/vimtex'
+
+  -- Github Copilot
+  use 'github/copilot.vim'
+
   -- Fuzzy Finder (files, lsp, etc)
   use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
 
